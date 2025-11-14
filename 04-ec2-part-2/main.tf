@@ -2,11 +2,6 @@ provider "aws" {
   region = "us-west-2"
 }
 
-resource "aws_instance" "myinstance" {
-    ami = "ami-04f9aa2b7c7091927"
-    instance_type = "t3.micro"
-    security_groups = [aws_security_group.webtrafic.id]
-}
 
 resource "aws_security_group" "webtrafic" {
   name = "allow https"
@@ -39,3 +34,8 @@ resource "aws_security_group" "webtrafic" {
     }
 }
 
+resource "aws_instance" "myinstance" {
+    ami = "ami-04f9aa2b7c7091927"
+    instance_type = "t3.micro"
+    vpc_security_group_ids = [aws_security_group.webtrafic.id]
+}
