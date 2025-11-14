@@ -26,3 +26,24 @@ sudo apt-get install terraform -y
 - https://marketplace.visualstudio.com/items?itemName=HashiCorp.terraform
 
 
+## AWS cli installion on ubuntu:
+```bash
+snap install aws-cli --classic
+```
+
+```
+root@ip-172-31-45-192:~/Terraform-Zero-Hero-Series-ITkannadigaru/03-ec2-basic# aws configure
+AWS Access Key ID [None]: 
+AWS Secret Access Key [None]: 
+Default region name [None]: us-west-2
+Default output format [None]: json
+```
+
+
+## AWS uses IANA protocol numbers:
+
+Protocol	Number
+TCP	         6
+UDP	         17
+ICMP       	 1
+ALL	         -1
