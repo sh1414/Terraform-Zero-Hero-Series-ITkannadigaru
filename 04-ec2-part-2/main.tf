@@ -33,15 +33,15 @@ resource "aws_security_group" "webtrafic" {
         cidr_blocks = ["0.0.0.0/0"]
     }
     tags = {
-        Name = "Terraform-security-group"
+        Name = "Terraform-security-group1"
     }
 }
 
 resource "aws_instance" "myinstance" {
-    ami = "ami-04f9aa2b7c7091927"
+    ami = "ami-00a8151272c45cd8e"
     instance_type = "t3.micro"
     vpc_security_group_ids = [aws_security_group.webtrafic.id]
     tags = {
-        Name = "Terraform-ec2"
+        Name = "Terraform-ec2-demo"
     }
 }
